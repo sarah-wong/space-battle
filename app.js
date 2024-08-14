@@ -48,7 +48,7 @@ class Spaceship{
                 console.log(`Hit! ${target.name} takes ${dmg} pts. of damage!`);
             }
             else{
-                console.log(`Miss! ${target.name} evaded the attack`);
+                console.log(`Miss! ${target.name} evaded the attack!`);
             }
         }
         
@@ -89,11 +89,11 @@ class Spaceship{
 
 const heroData = {name:"USS Assembly",hull:20, firepower:5,accuracy:0.7};
 class Hero extends Spaceship{
-    
     constructor(){
         super(heroData.name,heroData.hull,heroData.firepower,heroData.accuracy);
     }
 }
+
 const alienHp = {min:3,max:6};
 const alienDmg = {min:2,max:4};
 const alienAcc = {min:0.6,max:0.8};
@@ -104,4 +104,24 @@ class Alien extends Spaceship{
             randomInt(alienDmg.min,alienDmg.max),
             randomFloat(alienAcc.min,alienAcc.max));
     }
+}
+
+const Result = {
+    WIN:"Victory!",
+    LOSE:"Defeat.",
+    CONTINUE:"The Battle Continues..."
+}
+
+function fight(hero, alien){
+    hero.attack(alien);
+    if(!alien.isAlive()){
+        return Result.WIN;
+    }
+
+    alien.attack(hero);
+    if(!hero.isAlive()){
+        return Result.LOSE;
+    }
+
+    return Result.CONTINUE;
 }
