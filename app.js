@@ -1,7 +1,8 @@
-const heroData = {name:"USS Assembly", hull:20, firepower:5, accuracy:0.7};
-
 function randomInt(min=1,max=100){
-    return Math.floor(Math.random() * (max-min+1))+min;
+    return Math.floor(Math.random() * (max-min+1)) + min;
+}
+function randomFloat(min=0,max=1){
+    return Math.random() * (max-min) + min;
 }
 
 class Spaceship{
@@ -10,7 +11,7 @@ class Spaceship{
     #hp = 0;
     #stats = {hull, firepower, accuracy};
 
-    constructor(name, hull, firepower, accuracy){
+    constructor(name, hull=5, firepower=1, accuracy=0.5){
         this.#name = name;
         this.#hp = hull;
 
@@ -68,7 +69,7 @@ class Spaceship{
         }
     }
 
-    getShipInfo(){
+    getInfo(){
         const alive = this.isAlive()
         const status = alive?"Operational":"Destroyed";
         const hullPercent = this.#hp/this.#stats.hull * 100;
@@ -86,9 +87,21 @@ class Spaceship{
     }
 }
 
-class Hero extends Spaceship{   
+const heroData = {name:"USS Assembly",hull:20, firepower:5,accuracy:0.7};
+class Hero extends Spaceship{
+    
     constructor(){
-        
+        super(heroData.name,heroData.hull,heroData.firepower,heroData.accuracy);
     }
 }
-
+const alienHp = {min:3,max:6};
+const alienDmg = {min:2,max:4};
+const alienAcc = {min:0.6,max:0.8};
+class Alien extends Spaceship{
+    constructor(name){
+        super(name,
+            randomInt(alienHp.min,alienHp.max),
+            randomInt(alienDmg.min,alienDmg.max),
+            randomFloat(alienAcc.min,alienAcc.max));
+    }
+}
