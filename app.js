@@ -1,3 +1,9 @@
+const heroData = {name:"USS Assembly", hull:20, firepower:5, accuracy:0.7};
+
+function randomInt(min=1,max=100){
+    return Math.floor(Math.random() * (max-min+1))+min;
+}
+
 class Spaceship{
     // attributes
     #name = "";
@@ -13,12 +19,28 @@ class Spaceship{
         this.#stats.accuracy = accuracy;
     }
 
+    get name(){
+        return this.#name;
+    }
+    get health(){
+        return this.#hp;
+    }
+    get maxHealth(){
+        return this.#stats.hull;
+    }
+    get firepower(){
+        return this.#stats.firepower;
+    }
+    get accuracy(){
+        return this.#stats.accuracy;
+    }
+    
     // attack enemy spaceship
     attack(target){
         if(target instanceof Spaceship){
             console.log(`${this.#name} shoots at ${target.name}...`);
             
-            const roll = Math.random();
+            const roll = randomInt()/100;
             if(roll <= this.#stats.accuracy){
                 const dmg = this.#stats.firepower;
                 target.takeDamage(dmg);
@@ -46,20 +68,27 @@ class Spaceship{
         }
     }
 
-    get name(){
-        return this.#name;
+    getShipInfo(){
+        const alive = this.isAlive()
+        const status = alive?"Operational":"Destroyed";
+        const hullPercent = this.#hp/this.#stats.hull * 100;
+        const accPercent = this.#stats.accuracy * 100;
+        
+
+        let output = this.name;
+        output += `\nStatus: ${status}`;
+        output += `\nHull Integrity: ${hullPercent}%`;
+        output += `\nWeapon Data:`;
+        output += `\n\tFirepower: ${this.#stats.firepower} MW`;
+        output += `\n\tAccuracy: ${accPercent}%`;
+
+        return output;
     }
-    get health(){
-        return this.#hp;
-    }
-    get maxHealth(){
-        return this.#stats.hull;
-    }
-    get firepower(){
-        return this.#stats.firepower;
-    }
-    get accuracy(){
-        return this.#stats.accuracy;
+}
+
+class Hero extends Spaceship{   
+    constructor(){
+        
     }
 }
 
