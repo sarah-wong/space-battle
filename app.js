@@ -1,12 +1,10 @@
 class Spaceship{
     // attributes
-    #id = 0;
     #name = "";
     #hp = 0;
     #stats = {hull, firepower, accuracy};
 
-    constructor(id, name, hull, firepower, accuracy){
-        this.#id = id;
+    constructor(name, hull, firepower, accuracy){
         this.#name = name;
         this.#hp = hull;
 
@@ -15,14 +13,28 @@ class Spaceship{
         this.#stats.accuracy = accuracy;
     }
 
-    // attack method
+    // attack enemy spaceship
     attack(target){
         
     }
-    // take damage method
+    // take damage from an attack
     takeDamage(dmg){
 
     }
-
+    get name(){
+        return this.#name;
+    }
+    get currentHealth(){
+        return this.#hp;
+    }
+    get maxHealth(){
+        return this.#stats.hull;
+    }
+    get firepower(){
+        return this.#stats.firepower;
+    }
+    get accuracy(){
+        return this.#stats.accuracy;
+    }
 }
 
