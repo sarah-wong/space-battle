@@ -1,10 +1,13 @@
 body{
     background-image:url("img/stars.jpg");
     background-size:cover;
+    font-family:sans-serif;
 }
 
 .banner{
-    border:1px solid red;
+    /* border:1px solid red; */
+    
+    border-radius:20px;
     height:20vh;
     margin:0px 8vw;
     display:flex;
@@ -21,7 +24,10 @@ main{
 }
 
 .gameScreen{
-    border:1px solid black;
+    border:solid yellow;
+    border-radius:20px;
+    background-color:#00000090;
+    color:white;
     padding:10px;
     margin:1em;
     height:60vh;
@@ -31,15 +37,25 @@ main{
 }
 
 .third{
-    height:100%;
     width:33%;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:space-between;
+    align-items:center;
+    padding:1em 0px;
 }
 
 .heroSide{
     border:1px solid cyan;
 }
+.middle{
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif");
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
 .alienSide{
-    border:1px solid crimson;
+    border:1px solid red;
 }
 
 .btnContainer{
@@ -48,10 +64,47 @@ main{
     width:60vw;
     display:flex;
     flex-flow:row nowrap;
-    justify-content:space-evenly;
+    justify-content:space-around;
     align-content:center;
 }
 
 .gameBtn{
     font-size:2em;
+}
+
+.ship{
+    height:4em;
+    width:4em;
+}
+.healthDisplay{
+    width:95%;
+    display:flex;
+    align-items:center;
+    
+    font-weight:bold;
+    justify-content:space-between;
+    border-top:1px solid white;
+    padding-top:0.5em;
+}
+.healthBar{
+    border:solid black;
+    height:1em;
+    background-color:red;
+    width:85%;
+    display:flex;
+}
+.remainingHP{
+    height:100%;
+    width:100%;
+    background-color:lime;
+}
+#hero{
+    background-color:lime;
+}
+#alien{
+    background-color:blueviolet;
+}
+
+.hide{
+    display:none;
 }
