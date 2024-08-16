@@ -1,0 +1,46 @@
+.banner{
+    border:1px solid red;
+    height:15vh;
+}
+
+main{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+}
+
+.gameScreen{
+    border:1px solid black;
+    padding:10px;
+    margin:1em;
+    height:60vh;
+    width:60vw;
+    display:flex;
+    justify-content:space-between;
+}
+
+.third{
+    height:100%;
+    width:33%;
+}
+
+.heroSide{
+    border:1px solid cyan;
+}
+.alienSide{
+    border:1px solid crimson;
+}
+
+.btnContainer{
+    border:1px solid orchid;
+    padding:1em;
+    width:60vw;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-evenly;
+    align-content:center;
+}
+
+.gameBtn{
+    font-size:2em;
+}
