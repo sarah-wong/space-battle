@@ -126,46 +126,72 @@ function fight(hero, alien){
     return Result.CONTINUE;
 }
 
-function announce(hero, alien){
-    console.log(hero.getInfo());
-    console.log('-'.repeat(6) + "VS." + `-`.repeat(6));
-    console.log(alien.getInfo());
-    console.log("FIGHT!\n\n");
-}
+// function announce(hero, alien){
+//     console.log(hero.getInfo());
+//     console.log('-'.repeat(6) + "VS." + `-`.repeat(6));
+//     console.log(alien.getInfo());
+//     console.log("FIGHT!\n\n");
+// }
 
-function declareResult(result){
-    if(result === Result.WIN){
-        console.log("Victory!");
-        return true;
-    }
-    else{
-        console.log("Defeat...");
-        return false;
-    }
-}
+// function declareResult(result){
+//     if(result === Result.WIN){
+//         console.log("Victory!");
+//         return true;
+//     }
+//     else{
+//         console.log("Defeat...");
+//         return false;
+//     }
+// }
 
-function logLine(){
-    console.log("-".repeat(15));
-}
+// function logLine(){
+//     console.log("-".repeat(15));
+// }
 
-function combatRound(hero, alien){
+// function combatRound(hero, alien){
     
-    announce(hero, alien);
+//     announce(hero, alien);
     
-    let result = Result.CONTINUE;
-    while(result === Result.CONTINUE){
-        result = fight(hero, alien);
-        logLine();
-    }
+//     let result = Result.CONTINUE;
+//     while(result === Result.CONTINUE){
+//         result = fight(hero, alien);
+//         logLine();
+//     }
 
-    declareResult(result);
+//     declareResult(result);
    
-}
+// }
+
+// combatRound(hero, alien);
+
+// logLine();
+// console.log("Simulation Terminated.")
+
+const startBtn = document.querySelector(".gameBtn#start");
+const fireBtn = document.querySelector(".gameBtn#fire");
+const nextBtn = document.querySelector(".gameBtn#next");
+const retreatBtn = document.querySelector(".gameBtn#retreat");
 
 const hero = new Hero();
-const alien = new Alien("HR Geiger");
+let currentAlien;
+let round = 0;
 
-combatRound(hero, alien);
+function handleStart(evt){
 
-logLine();
-console.log("Simulation Terminated.")
+}
+startBtn.addEventListener("click",handleStart);
+
+function handleFire(evt){
+
+}
+fireBtn.addEventListener("click",handleFire);
+
+function handleNext(evt){
+    
+}
+nextBtn.addEventListener("click",handleNext);
+
+function handleRetreat(evt){
+
+}
+retreatBtn.addEventListener("click",handleRetreat);
