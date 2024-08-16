@@ -108,3 +108,7 @@ main{
 .hide{
     display:none;
 }
+
+.combatLog{
+    text-align:center;
+}

@@ -135,19 +135,39 @@ const retreatBtn = document.querySelector(".gameBtn#retreat");
 const alienElem = {
     name : document.querySelector(".alienName"),
     image : document.querySelector(".ship#alien>img"),
-    healthDisplay : document.querySelector(".alienSide>.healthDisplay")
+    healthDisplay : document.querySelector(".alienSide>.healthDisplay"),
+    hpBarSpan : document.querySelector(".alienSide>.healthDisplay>.healthBar>.remainingHP")
 }
 
 const heroHealthDisplay = document.querySelector(".heroSide>.healthDisplay");
 const roundDisplay = document.querySelector(".round");
 const combatLog = document.querySelector(".combatLog");
 
-const hero = new Hero();
-let currentAlien;
-let round;
+
+// Game Data
+const alienData = [];
+alienData.push({name:"Alien 1",img:""});
+alienData.push({name:"Alien 2",img:""});
+alienData.push({name:"Alien 3",img:""});
+alienData.push({name:"Alien 4",img:""});
+alienData.push({name:"Alien 5",img:""});
+alienData.push({name:"Alien 6",img:""});
+
+let hero = null;
+let currentAlien = null;
+let round = 0;
+
+function startRoundHelper(num){
+    // setup alien
+    let data = alienData[num];
+    currentAlien = new Alien(data.name);
+    alienElem.name = data.name.toUpperCase();
+}
+
+// Event Listeners
 
 function handleStart(evt){
-
+    
 }
 startBtn.addEventListener("click",handleStart);
 
