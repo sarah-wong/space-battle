@@ -1,6 +1,7 @@
 .banner{
     border:1px solid red;
-    height:15vh;
+    height:20vh;
+    margin:0px 8vw;
 }
 
 main{
