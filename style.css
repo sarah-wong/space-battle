@@ -1,7 +1,17 @@
+body{
+    background-image:url("img/stars.jpg");
+    background-size:cover;
+}
+
 .banner{
     border:1px solid red;
     height:20vh;
     margin:0px 8vw;
+    display:flex;
+    justify-content:center;
+}
+.bannerImg{
+    height:100%;
 }
 
 main{
