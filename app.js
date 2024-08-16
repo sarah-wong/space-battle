@@ -126,55 +126,17 @@ function fight(hero, alien){
     return Result.CONTINUE;
 }
 
-// function announce(hero, alien){
-//     console.log(hero.getInfo());
-//     console.log('-'.repeat(6) + "VS." + `-`.repeat(6));
-//     console.log(alien.getInfo());
-//     console.log("FIGHT!\n\n");
-// }
-
-// function declareResult(result){
-//     if(result === Result.WIN){
-//         console.log("Victory!");
-//         return true;
-//     }
-//     else{
-//         console.log("Defeat...");
-//         return false;
-//     }
-// }
-
-// function logLine(){
-//     console.log("-".repeat(15));
-// }
-
-// function combatRound(hero, alien){
-    
-//     announce(hero, alien);
-    
-//     let result = Result.CONTINUE;
-//     while(result === Result.CONTINUE){
-//         result = fight(hero, alien);
-//         logLine();
-//     }
-
-//     declareResult(result);
-   
-// }
-
-// combatRound(hero, alien);
-
-// logLine();
-// console.log("Simulation Terminated.")
-
+// Buttons
 const startBtn = document.querySelector(".gameBtn#start");
 const fireBtn = document.querySelector(".gameBtn#fire");
 const nextBtn = document.querySelector(".gameBtn#next");
 const retreatBtn = document.querySelector(".gameBtn#retreat");
 
+const pageDisplay = {};
+
 const hero = new Hero();
 let currentAlien;
-let round = 0;
+let round;
 
 function handleStart(evt){
 
