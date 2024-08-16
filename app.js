@@ -132,7 +132,15 @@ const fireBtn = document.querySelector(".gameBtn#fire");
 const nextBtn = document.querySelector(".gameBtn#next");
 const retreatBtn = document.querySelector(".gameBtn#retreat");
 
-const pageDisplay = {};
+const alienElem = {
+    name : document.querySelector(".alienName"),
+    image : document.querySelector(".ship#alien>img"),
+    healthDisplay : document.querySelector(".alienSide>.healthDisplay")
+}
+
+const heroHealthDisplay = document.querySelector(".heroSide>.healthDisplay");
+const roundDisplay = document.querySelector(".round");
+const combatLog = document.querySelector(".combatLog");
 
 const hero = new Hero();
 let currentAlien;
